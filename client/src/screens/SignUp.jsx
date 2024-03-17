@@ -1,12 +1,12 @@
-import React from 'react';
+import "../styles/SignUp.css";
 
 const SignUp = () => {
     return (
-        <div>
+        <div className="container__body">
             <div className="container">
                 <div className="register-container">
-                    <form className="register-form" action="register.php" method="POST">
-                        <h2>Register</h2>
+                    <form className="register-form">
+                        <h2>Register</h2><br/>
                         <div className="input-group">
                             <label htmlFor="fullname">Full Name:</label>
                             <input type="text" id="fullname" name="fullname" required />
@@ -24,7 +24,7 @@ const SignUp = () => {
                             <input type="password" id="password" name="password" required />
                         </div>
                         <button type="submit">Register</button>
-                    </form>
+                    </form><br />
                     <button className="login-button">Go to Login</button>
                 </div>
             </div>
