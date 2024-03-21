@@ -1,8 +1,11 @@
+import Navbar from "../components/Navbar";
+
 const Home = () => {
+  const user = "Sanil Surve" // `${firstName}`
   return (
-    <div>
-      Home
-    </div>
+    <>
+       <Navbar user={user} />
+    </>
   )
 }
 

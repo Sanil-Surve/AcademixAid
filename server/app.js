@@ -1,3 +1,21 @@
-let data = "Sanil Surve";
+const express = require("express");
+const bodyparser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
+require('./models/db');
+const cors = require("cors");
 
-console.log(data)
+const PORT_URI = process.env.PORT || 4000;
+const app = express();
+const userRouter = require("./routes/user");
+
+app.use(express.json());
+app.use(bodyparser.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(userRouter);
+
+app.listen(PORT_URI, () => {
+  console.log(`Server listening on port:${PORT_URI}`);
+});
