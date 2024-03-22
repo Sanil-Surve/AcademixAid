@@ -1,0 +1,37 @@
+.input-container {
+    display: flex;
+    justify-content: center; /* Center the input bar horizontally */
+  }
+  
+  .input-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%; /* Make the input bar half-width */
+  }
+  
+  .input-bar input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .input-bar button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 0px; /* Overlap border between input and button */
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .input-bar button:hover {
+    background-color: #0056b3;
+  }
+  

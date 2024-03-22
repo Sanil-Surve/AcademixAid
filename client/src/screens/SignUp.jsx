@@ -44,7 +44,7 @@ function SignUp() {
     <div className="registration">
       <div className="login-from">
         <div className="title">
-          <h1>Registration Page</h1>
+          <h1>Register Here</h1>
         </div>
         <form action="">
           <label htmlFor="firstName">First Name </label>
@@ -66,7 +66,7 @@ function SignUp() {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter your Email"
             name="email"
             value={user.email}
             onChange={(event) => handleChange(event)}
@@ -84,6 +84,7 @@ function SignUp() {
             Register
           </button>
         </form>
+        <p>If you already a user kindly</p><a href="/login">Login</a>
       </div>
     </div>
   );
