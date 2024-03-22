@@ -21,7 +21,7 @@ exports.isAuth = async (req, res, next) => {
       if (error.name === 'TokenExpiredError') {
         return res.json({
           success: false,
-          message: 'sesson expired try sign in!',
+          message: 'session expired try sign in!',
         });
       }
 
