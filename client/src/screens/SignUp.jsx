@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../styles/SignUp.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     firstName: " ",
     lastName: " ",
@@ -19,7 +21,7 @@ function SignUp() {
     });
   };
 
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(user);
     const response = await fetch(`http://localhost:8080/create-user`, {
@@ -29,15 +31,15 @@ function SignUp() {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(user), // body data type must match "Content-Type" header
     });
     const res = response.json();
-    console.log(res)
+    console.log(res);
     setUser({ firstName: " ", lastName: " ", email: " ", password: " " });
+    navigate("/home");
   };
 
   return (
@@ -84,7 +86,9 @@ function SignUp() {
             Register
           </button>
         </form>
-        <p>If you already a user kindly</p><a href="/login">Login</a>
+        <p>
+          If you already a user kindly <Link to="/login">Login</Link>
+        </p>
       </div>
     </div>
   );
