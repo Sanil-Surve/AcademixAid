@@ -3,8 +3,8 @@ import "../styles/SignUp.css";
 
 function SignUp() {
   const [user, setUser] = useState({
-    fname: " ",
-    lname: " ",
+    firstName: " ",
+    lastName: " ",
     email: " ",
     password: " ",
   });
@@ -19,9 +19,25 @@ function SignUp() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     console.log(user);
+    const response = await fetch(`http://localhost:8080/create-user`, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(user), // body data type must match "Content-Type" header
+    });
+    const res = response.json();
+    console.log(res)
+    setUser({ firstName: " ", lastName: " ", email: " ", password: " " });
   };
 
   return (
@@ -31,20 +47,20 @@ function SignUp() {
           <h1>Registration Page</h1>
         </div>
         <form action="">
-          <label htmlFor="fname">First Name </label>
+          <label htmlFor="firstName">First Name </label>
           <input
             type="text"
             placeholder="Enter your First name"
-            name="fname"
-            value={user.fname}
+            name="firstName"
+            value={user.firstName}
             onChange={(event) => handleChange(event)}
           />
-          <label htmlFor="lname">Last Name</label>
+          <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
             placeholder="Enter your Last name"
-            name="lname"
-            value={user.lname}
+            name="lastName"
+            value={user.lastName}
             onChange={(event) => handleChange(event)}
           />
           <label htmlFor="email">Email</label>
@@ -64,7 +80,9 @@ function SignUp() {
             value={user.password}
             onChange={(event) => handleChange(event)}
           />
-          <button onClick={handleSubmit} type="submit">Register</button>
+          <button onClick={handleSubmit} type="submit">
+            Register
+          </button>
         </form>
       </div>
     </div>

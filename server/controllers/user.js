@@ -18,6 +18,7 @@ exports.createUser = async (req, res) => {
   });
   await user.save();
   res.json({ success: true, user });
+  console.log(user)
 };
 
 exports.userSignIn = async (req, res) => {
