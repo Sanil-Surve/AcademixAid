@@ -1,21 +1,20 @@
 import { useState } from "react";
+
 import InputBar from "../components/InputBar";
 import Navbar from "../components/Navbar";
 
-const Home = ({ firstName }) => {
-  const user = `${firstName}`; // `${firstName}`
+const Home = () => {
   const [savedQuestion, setSavedQuestion] = useState([]);
 
   const handleSave = (question) => {
-    // setSavedQuestion(question);
+    //make api call to the server
     setSavedQuestion([...savedQuestion, question]);
   };
 
   return (
     <>
-      <Navbar user={user} />
+      <Navbar />
       <InputBar onSubmit={handleSave} />
-      {/* {savedQuestion && <p>{savedQuestion}</p>} */}
       {savedQuestion.length > 0 && (
         <ul>
           {savedQuestion.map((question, index) => (
