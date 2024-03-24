@@ -1,25 +1,24 @@
-.navbar {
-    background-color: #3498db;
-    color: #fff;
+  .navbar {
+    background-color: #609ded; /* Set your desired background color */
+    padding: 10px 20px; /* Adjust padding as needed */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
   }
-  
-  .navbar-logo img {
-    width: 40px;
-    height: 40px; /* Ensure width and height are equal */
-    margin-right: 10px;
-    border-radius: 50%; /* Set border-radius to 50% to make it circular */
-  }  
   
   .navbar-brand {
-    font-size: 20px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff; /* Set your desired text color */
   }
   
-  .navbar-user {
-    font-size: 16px;
+  .navbar-brand img {
+    margin-right: 5px; /* Adjust margin as needed */
+  }
+  
+  .user-greeting {
+    color: #ffffff; /* Set your desired text color */
+    font-weight: bold; /* Adjust font weight as needed */
   }
   

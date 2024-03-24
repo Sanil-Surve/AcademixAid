@@ -29,7 +29,7 @@ exports.userSignIn = async (req, res) => {
   if (!user)
     return res.json({
       success: false,
-      message: 'user not found, with the given email!',
+      message: 'User not Found, Try to Create an Account!',
     });
 
   const isMatch = await user.comparePassword(password);

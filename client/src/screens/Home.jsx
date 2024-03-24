@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import InputBar from "../components/InputBar";
 import Navbar from "../components/Navbar";
+import "../styles/Home.css";
 
 const Home = () => {
   const [savedQuestion, setSavedQuestion] = useState([]);

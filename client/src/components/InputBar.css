@@ -1,37 +1,58 @@
 .input-container {
-    display: flex;
-    justify-content: center; /* Center the input bar horizontally */
-  }
-  
+  display: flex;
+  justify-content: center;
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  max-width: 600px; /* Set your desired maximum width */
+  width: 100%;
+}
+
+.input-bar input {
+  flex: 1;
+  padding: 10px;
+  margin-top: 17px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin between input and button */
+}
+
+.input-bar button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Set your desired button background color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-bar button:hover {
+  background-color: #0056b3; /* Set your desired button hover background color */
+}
+
+@media screen and (max-width: 768px) {
   .input-bar {
-    display: flex;
-    align-items: center;
-    background-color: #f0f0f0;
-    margin-top: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    width: 50%; /* Make the input bar half-width */
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .input-bar input[type="text"] {
-    flex: 1;
-    border: none;
-    padding: 8px 15px;
-    font-size: 16px;
-    border-radius: 5px 0 0 5px;
+
+  .input-bar input {
+    margin-bottom: 10px;
   }
-  
+
   .input-bar button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    margin-left: 0px; /* Overlap border between input and button */
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: auto;
   }
+}
+
   
-  .input-bar button:hover {
-    background-color: #0056b3;
-  }
+
+
+
   

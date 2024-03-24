@@ -1,0 +1,32 @@
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  li {
+    margin-bottom: 10px; /* Adjust margin between list items */
+  }
+  
+  li p {
+    display: inline; /* Display paragraph inline with the button */
+    margin-right: 10px; /* Adjust margin between paragraph and button */
+  }
+  
+  li button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Set your desired button background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  li button:hover {
+    background-color: #0056b3; /* Set your desired button hover background color */
+  }
+  
+  
